@@ -88,8 +88,12 @@ bool HelloWorld::init()
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
     
-    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("hhl.mp3", true);
+#else
+    CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("/Volumes/data/apps/ppTankX/Classes/hhl.mp3", true);
+#endif
+    
     
     return true;
 }
